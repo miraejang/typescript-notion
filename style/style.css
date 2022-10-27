@@ -1,3 +1,37 @@
+/* common */
+* {
+  box-sizing: border-box;
+}
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div,
+ul,
+li,
+p,
+pre {
+  padding: 0;
+  margin: 0;
+}
+li {
+  list-style: none;
+}
+p,
+pre {
+  color: var(--smokywhite);
+}
+pre {
+  font-family: inherit;
+}
+button {
+  border: 0;
+}
+
+/* colors */
 :root {
   --bg-main-color: #00000080;
   --bg-accent-color: #2d2d2d;
@@ -15,4 +49,77 @@
   --smokywhite: #dddbd8;
   --black: #000000;
   --translucent-black: #00000099;
+}
+
+/* app */
+body {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  background: url('../assets/background.png') no-repeat center/cover;
+  font-family: Roboto, Oxygen, sans-serif;
+  font-size: 1.25rem;
+}
+.app {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  max-width: 1000px;
+}
+
+.header {
+  padding: 1.5rem 0;
+  background-color: var(--bg-main-color);
+  border-bottom: 1px solid var(--bg-accent-color);
+  text-align: center;
+}
+.header__title {
+  color: var(--accent-color);
+}
+.control-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+.create-button {
+  margin: 0.1em 0.2em;
+  padding: 1em 3em;
+  border-radius: 2px;
+  border-color: var(--accent-color);
+  background-color: var(--accent-color);
+  font-weight: 600;
+  font-size: 0.8rem;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  user-select: none;
+}
+
+.contents {
+  height: 100%;
+  overflow-y: auto;
+  background-color: var(--document-bg-color);
+  /* Firefox */
+  scrollbar-width: 6px;
+  scrollbar-color: var(--bg-accent-color);
+  scrollbar-face-color: var(--accent-color);
+}
+.contents::-webkit-scrollbar {
+  /* Safari and Chrome */
+  width: 6px;
+  background-color: var(--bg-accent-color);
+}
+.contents::-webkit-scrollbar-thumb {
+  /* Safari and Chrome */
+  background-color: var(--bg-accent-color);
+}
+
+.footer {
+  padding: 1.5rem 0;
+  background-color: var(--bg-main-color);
+  border-top: 1px solid var(--border-color);
+  text-align: center;
 }
