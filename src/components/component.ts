@@ -1,5 +1,6 @@
 export interface Component {
   attachTo(parent: HTMLElement, position?: InsertPosition): void;
+  removeForm(parent: HTMLElement): void;
 }
 
 export class BaseComponent<T extends HTMLElement> implements Component {
@@ -12,5 +13,8 @@ export class BaseComponent<T extends HTMLElement> implements Component {
 
   attachTo(parent: HTMLElement, position: InsertPosition = 'afterbegin') {
     parent.insertAdjacentElement(position, this.element);
+  }
+  removeForm(parent: HTMLElement) {
+    parent.removeChild(this.element);
   }
 }
