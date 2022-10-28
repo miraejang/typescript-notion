@@ -1,15 +1,15 @@
-import { BaseComponent } from './components/component.js';
-import { PageComponent } from './components/page.js';
+import { Component } from './components/component.js';
+import { Composable, PageComponent, PageItemComponent } from './components/page.js';
 import { ImageComponent } from './items/image.js';
 import { NoteComponent } from './items/note.js';
 import { TodoComponent } from './items/todo.js';
 import { VideoComponent } from './items/video.js';
 
 class App {
-  page;
+  private readonly page: Component & Composable;
   constructor(appRoot: HTMLElement) {
     // ul 생성
-    this.page = new PageComponent();
+    this.page = new PageComponent(PageItemComponent);
     this.page.attachTo(appRoot);
 
     // li 생성 - image

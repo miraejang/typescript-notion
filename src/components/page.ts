@@ -1,10 +1,17 @@
 import { BaseComponent, Component } from './component.js';
 
-interface Composable {
+export interface Composable {
   addChild(child: Component): void;
 }
 type OnCloseLisetener = () => void;
-export class PageItemComponent extends BaseComponent<HTMLUListElement> implements Composable {
+interface SectionContainer extends Component, Composable {
+  setOncloseLisetener(lisetener: OnCloseLisetener): void;
+}
+type SectionContainerConstructor = {
+  new (): SectionContainer;
+};
+
+export class PageItemComponent extends BaseComponent<HTMLUListElement> implements SectionContainer {
   private closeListener?: OnCloseLisetener;
   constructor() {
     super(`<li class="item">
@@ -31,12 +38,12 @@ export class PageItemComponent extends BaseComponent<HTMLUListElement> implement
 }
 
 export class PageComponent extends BaseComponent<HTMLUListElement> implements Composable {
-  constructor() {
+  constructor(private PageItemComponent: SectionContainerConstructor) {
     super('<ul class="items"></ul>');
   }
 
   addChild(section: Component) {
-    const item = new PageItemComponent();
+    const item = new this.PageItemComponent();
     item.addChild(section);
     item.attachTo(this.element, 'beforeend');
     item.setOncloseLisetener(() => {
