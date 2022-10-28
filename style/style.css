@@ -21,7 +21,8 @@ li {
   list-style: none;
 }
 p,
-pre {
+pre,
+label {
   color: var(--smokywhite);
 }
 pre {
@@ -29,6 +30,8 @@ pre {
 }
 button {
   border: 0;
+  background-color: transparent;
+  cursor: pointer;
 }
 
 /* colors */
@@ -98,7 +101,7 @@ body {
   user-select: none;
 }
 
-.contents {
+.main {
   height: 100%;
   overflow-y: auto;
   background-color: var(--document-bg-color);
@@ -107,12 +110,12 @@ body {
   scrollbar-color: var(--bg-accent-color);
   scrollbar-face-color: var(--accent-color);
 }
-.contents::-webkit-scrollbar {
+.main::-webkit-scrollbar {
   /* Safari and Chrome */
   width: 6px;
   background-color: var(--bg-accent-color);
 }
-.contents::-webkit-scrollbar-thumb {
+.main::-webkit-scrollbar-thumb {
   /* Safari and Chrome */
   background-color: var(--bg-accent-color);
 }
@@ -122,4 +125,77 @@ body {
   background-color: var(--bg-main-color);
   border-top: 1px solid var(--border-color);
   text-align: center;
+}
+
+/* item */
+.items {
+  padding: 1rem 4rem;
+  max-width: 1000px;
+}
+.item {
+  padding: 1rem 0;
+}
+.item__wrap {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background: var(--component-bg-gradient);
+  box-shadow: 2px 2px 6px var(--shadow-color);
+}
+.item__body {
+  flex: 1;
+  height: 100%;
+}
+.item__container {
+  height: 100%;
+}
+.item__view-box {
+  overflow: hidden;
+  display: flex;
+  flex: 1 1 60%;
+  height: 100%;
+  align-items: center;
+}
+.item__view {
+  width: 100%;
+}
+.item__title {
+  color: var(--text-accent-color);
+}
+.item__text {
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+}
+.item__controls {
+  flex: 0;
+  padding-right: 0.3rem;
+}
+.close-button {
+  padding: 0.5rem;
+  font-weight: bold;
+  font-size: 1.75rem;
+  color: var(--accent-color);
+  align-self: flex-end;
+  transition: color 250ms ease 0s;
+}
+
+/* item item__preview */
+.item__preview {
+  height: 250px;
+}
+.item__preview .item__container {
+  display: flex;
+}
+.item__preview .item__title-box {
+  padding: 1rem;
+  flex: 1 1 40%;
+}
+
+/* item item__basic */
+.item__basic .item__title-box {
+  padding-bottom: 1rem;
+}
+.item__basic .item__body {
+  padding: 2rem 1rem 2rem 2rem;
 }

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Notion</title>
     <link rel="stylesheet" href="./style/style.css" />
-    <script src="./dist/app.js"></script>
+    <script src="./dist/app.js" defer></script>
   </head>
   <body>
     <div class="app">
@@ -19,7 +19,98 @@
           <li><button class="new-todo create-button">Todo</button></li>
         </ul>
       </header>
-      <div class="contents"></div>
+      <main class="main">
+        <!-- sample -->
+        <ul class="items">
+          <li class="item">
+            <div class="item__wrap item__preview item__image">
+              <div class="item__body">
+                <div class="item__container">
+                  <div class="item__view-box">
+                    <img
+                      src="https://picsum.photos/800/400"
+                      alt="title"
+                      class="item__view"
+                    />
+                  </div>
+                  <div class="item__title-box">
+                    <h2 class="item__title">Image</h2>
+                  </div>
+                </div>
+              </div>
+              <div class="item__controls">
+                <button class="close-button">&times;</button>
+              </div>
+            </div>
+          </li>
+          <li class="item">
+            <div class="item__wrap item__preview item__video">
+              <div class="item__body">
+                <div class="item__container">
+                  <div class="item__view-box">
+                    <iframe
+                      class="item__view"
+                      width="894"
+                      height="503"
+                      src="https://www.youtube.com/embed/5dppORtI6RA"
+                      title="가을에 듣기좋은 노래 모음🍁 도입부 부터 좋은 팝송 감성 플리"
+                      frameborder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen
+                    ></iframe>
+                  </div>
+                  <div class="item__title-box">
+                    <h2 class="item__title">Video</h2>
+                  </div>
+                </div>
+              </div>
+              <div class="item__controls">
+                <button class="close-button">&times;</button>
+              </div>
+            </div>
+          </li>
+          <li class="item">
+            <div class="item__wrap item__basic item__note">
+              <div class="item__body">
+                <div class="item__container">
+                  <div class="item__title-box">
+                    <h2 class="item__title">Note</h2>
+                  </div>
+                  <div class="item__content-box">
+                    <p class="item__text">hi~!</p>
+                  </div>
+                </div>
+              </div>
+              <div class="item__controls">
+                <button class="close-button">&times;</button>
+              </div>
+            </div>
+          </li>
+          <li class="item">
+            <div class="item__wrap item__basic item__todo">
+              <div class="item__body">
+                <div class="item__container">
+                  <div class="item__title-box">
+                    <h2 class="item__title">To Do</h2>
+                  </div>
+                  <div class="item__content-box">
+                    <input
+                      type="checkbox"
+                      name="title"
+                      id="id"
+                      class="item__input"
+                    />
+                    <label for="id">content</label>
+                  </div>
+                </div>
+              </div>
+              <div class="item__controls">
+                <button class="close-button">&times;</button>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </main>
       <footer class="footer">
         <p>copyrigth by mirae</p>
       </footer>
