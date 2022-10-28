@@ -1,4 +1,5 @@
 import { BaseComponent } from './components/component.js';
+import { PageComponent } from './components/page.js';
 
 class App {
   constructor() {
@@ -6,7 +7,7 @@ class App {
     const main = document.querySelector('.main')! as HTMLElement;
 
     // ul 생성
-    const page = new BaseComponent('<ul class="items"></ul>');
+    const page = new PageComponent();
     page.attachTo(main, 'beforeend');
 
     const ul = main.querySelector('.items')! as HTMLUListElement;
