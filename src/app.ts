@@ -1,13 +1,15 @@
+import { BaseComponent } from './components/component.js';
+
 class App {
   constructor() {
     // main
     const main = document.querySelector('.main')! as HTMLElement;
 
     // ul 생성
-    const template = document.createElement('template');
-    template.innerHTML = '<ul class="items"></ul>';
-    const ul = template.content.firstElementChild! as HTMLUListElement;
-    main.insertAdjacentElement('afterbegin', ul);
+    const page = new BaseComponent('<ul class="items"></ul>');
+    page.attachTo(main, 'afterbegin');
+
+    const ul = main.querySelector('.items')! as HTMLUListElement;
 
     // li 생성 - image
     const imageTemp = document.createElement('template');
