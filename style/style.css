@@ -33,6 +33,16 @@ button {
   background-color: transparent;
   cursor: pointer;
 }
+label {
+  color: var(--text-accent-color);
+}
+input,
+textarea {
+  background-color: var(--text-edit-bg-color);
+  color: var(--smokywhite);
+  font-size: 1.5em;
+  outline: 0;
+}
 
 /* colors */
 :root {
@@ -83,7 +93,8 @@ body {
   justify-content: center;
   margin-top: 1.5rem;
 }
-.create-button {
+.create-button,
+.submit-button {
   margin: 0.1em 0.2em;
   padding: 1em 3em;
   border-radius: 2px;
@@ -168,12 +179,21 @@ body {
   padding-right: 0.3rem;
 }
 .close-button {
-  padding: 0.5rem;
-  font-weight: bold;
-  font-size: 1.75rem;
-  color: var(--accent-color);
   align-self: flex-end;
-  transition: color 250ms ease 0s;
+  padding: 0.2rem;
+  color: var(--accent-color);
+  font-size: 28px;
+  font-weight: bold;
+  margin: 3px;
+  transition: color 250ms ease;
+}
+
+.close-button:hover,
+.close-button:focus {
+  transform: scale(1.5);
+  color: var(--shadow-color);
+  text-decoration: none;
+  cursor: pointer;
 }
 
 /* item item__preview */
@@ -196,4 +216,42 @@ body {
 .item__note .item__title-box,
 .item__todo .item__title-box {
   padding-bottom: 1rem;
+}
+
+/* -- Dialog -- */
+.dialog {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 1.2rem;
+  background-color: var(--document-bg-color);
+}
+
+.dialog__container {
+  display: flex;
+  flex-direction: column;
+  padding: 0.4em;
+  width: 32em;
+  background: var(--bg-accent-color);
+  background: var(--component-bg-gradient);
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  box-shadow: 2px 2px 20px var(--shadow-color);
+}
+
+.input-box {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1em;
+}
+
+.dialog__submit {
+  display: flex;
+  justify-content: center;
 }
