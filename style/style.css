@@ -44,11 +44,7 @@ button {
   --border-color: #3f3f3f;
   --shadow-color: #202020;
   --document-bg-color: #68686850;
-  --component-bg-gradient: radial-gradient(
-    circle,
-    #646464e6 0%,
-    #363636e6 100%
-  );
+  --component-bg-gradient: radial-gradient(circle, #646464e6 0%, #363636e6 100%);
   --smokywhite: #dddbd8;
   --black: #000000;
   --translucent-black: #00000099;
@@ -181,21 +177,23 @@ body {
 }
 
 /* item item__preview */
-.item__preview {
+.item__image,
+.item__video {
+  display: flex;
   height: 250px;
 }
-.item__preview .item__container {
-  display: flex;
-}
-.item__preview .item__title-box {
-  padding: 1rem;
+.item__image .item__title-box,
+.item__video .item__title-box {
   flex: 1 1 40%;
+  padding: 1rem;
 }
 
 /* item item__basic */
-.item__basic .item__title-box {
-  padding-bottom: 1rem;
-}
-.item__basic .item__body {
+.item__note,
+.item__todo {
   padding: 2rem 1rem 2rem 2rem;
+}
+.item__note .item__title-box,
+.item__todo .item__title-box {
+  padding-bottom: 1rem;
 }
