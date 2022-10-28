@@ -1,48 +1,18 @@
 import { BaseComponent } from './components/component.js';
 import { PageComponent } from './components/page.js';
+import { ImageComponent } from './items/image.js';
 
 class App {
-  constructor() {
-    // main
-    const main = document.querySelector('.main')! as HTMLElement;
-
+  constructor(appRoot: HTMLElement) {
     // ul 생성
     const page = new PageComponent();
-    page.attachTo(main, 'beforeend');
+    page.attachTo(appRoot, 'beforeend');
 
-    const ul = main.querySelector('.items')! as HTMLUListElement;
+    const ul = appRoot.querySelector('.items')! as HTMLUListElement;
 
     // li 생성 - image
-    const imageTemp = new BaseComponent(`<li class="item">
-                                      <div class="item__wrap">
-                                        <div class="item__body"></div>
-                                        <div class="item__controls">
-                                          <button class="close-button">&times;</button>
-                                        </div>
-                                      </div>
-                                    </li>`);
+    const imageTemp = new ImageComponent('Image', 'https://picsum.photos/800/400');
     imageTemp.attachTo(ul, 'beforeend');
-    const imageLi = imageTemp.element;
-
-    const imageWrap = imageLi.querySelector('.item__wrap')! as HTMLElement;
-    imageWrap.classList.add('item__preview', 'item__image');
-    const imageLibody = imageLi.querySelector('.item__body')! as HTMLElement;
-
-    const imageBody = document.createElement('template');
-    imageBody.innerHTML = `<div class='item__container'>
-      <div class="item__view-box">
-        <img
-          src="https://picsum.photos/800/400"
-          alt="title"
-          class="item__view"
-        />
-      </div>
-      <div class="item__title-box">
-        <h2 class="item__title">Image</h2>
-      </div>
-    </div>`;
-    const image = imageBody.content.firstElementChild! as HTMLLIElement;
-    imageLibody.insertAdjacentElement('afterbegin', image);
 
     // li 생성 - video
     const videoTemp = new BaseComponent(`<li class="item">
@@ -137,4 +107,4 @@ class App {
   }
 }
 
-new App();
+new App(document.querySelector('.main')! as HTMLElement);
