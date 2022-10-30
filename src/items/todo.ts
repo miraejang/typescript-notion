@@ -8,14 +8,14 @@ export class TodoComponent extends BaseComponent<HTMLElement> {
             </div>
             <div class="item__content-box">
               <input type="checkbox" name="title" id="id" class="item__input" />
-              <label for="id"></label>
+              <label for="id" class="todo-label"></label>
             </div>
           </div>`);
 
     const titleElement = this.element.querySelector('.item__title')! as HTMLHeadElement;
     titleElement.textContent = title;
 
-    const todoElement = this.element.querySelector('.item__input')! as HTMLInputElement;
+    const todoElement = this.element.querySelector('.todo-label')! as HTMLLabelElement;
     todoElement.textContent = todo;
   }
 }
