@@ -1,9 +1,10 @@
-import { BaseComponent } from './../../component.js';
+import { Composable } from '../../page.js';
+import { BaseComponent, Component } from './../../component.js';
 
 type OnCloseListener = () => void;
 type OnSubmitListener = () => void;
 
-export class InputDialog extends BaseComponent<HTMLElement> {
+export class InputDialog extends BaseComponent<HTMLElement> implements Composable {
   private closeListener?: OnCloseListener;
   private submitListener?: OnSubmitListener;
   constructor() {
@@ -11,17 +12,7 @@ export class InputDialog extends BaseComponent<HTMLElement> {
             <div class="dialog__container">
               <button class="close-button">&times;</button>
               <div class="dialog__body">
-                <form>
-                  <div class="form__container">
-                    <div class="input-box">
-                      <label for="title">Title</label>
-                      <input type="text" id="title" />
-                    </div>
-                    <div class="input-box">
-                      <label for="url">URL</label>
-                      <input type="text" id="url" />
-                    </div>
-                  </div>
+                <form class="dialog__form">
                   <div class="dialog__submit">
                     <button class="submit-button">ADD</button>
                   </div>
@@ -42,19 +33,14 @@ export class InputDialog extends BaseComponent<HTMLElement> {
     });
   }
 
+  addChild(child: Component) {
+    const form = this.element.querySelector('.dialog__form')! as HTMLElement;
+    child.attachTo(form);
+  }
   setOnCloseListener(listener: OnCloseListener) {
     this.closeListener = listener;
   }
   setOnSubmitListener(listener: OnCloseListener) {
     this.submitListener = listener;
-  }
-
-  get title(): string {
-    const element = document.querySelector('#title')! as HTMLInputElement;
-    return element.value;
-  }
-  get url(): string {
-    const element = document.querySelector('#url')! as HTMLInputElement;
-    return element.value;
   }
 }
