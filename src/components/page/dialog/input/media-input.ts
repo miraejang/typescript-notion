@@ -1,6 +1,6 @@
 import { BaseComponent } from '../../../component.js';
 
-interface MediaData {
+export interface MediaData {
   readonly title: string;
   readonly url: string;
 }

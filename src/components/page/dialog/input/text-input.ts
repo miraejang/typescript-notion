@@ -1,6 +1,6 @@
 import { BaseComponent } from '../../../component.js';
 
-interface TextData {
+export interface TextData {
   readonly title: string;
   readonly content: string;
 }
