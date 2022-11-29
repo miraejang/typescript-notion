@@ -19,21 +19,15 @@ class App {
     this.page = new PageComponent(PageItemComponent);
     this.page.attachTo(appRoot);
 
-    // // li 생성 - image
-    // const image = new ImageComponent('Image', 'https://picsum.photos/800/500');
-    // this.page.addChild(image);
-
-    // // li 생성 - video
-    // const video = new VideoComponent('Video Title', 'https://www.youtube.com/embed/5dppORtI6RA');
-    // this.page.addChild(video);
-
-    // // // li 생성 - note
-    // const note = new NoteComponent('Note title', 'hello~~~~');
-    // this.page.addChild(note);
-
-    // // // li 생성 - todo
-    // const todo = new TodoComponent('Todo Title', 'Study');
-    // this.page.addChild(todo);
+    // For demo :)
+    this.page.addChild(new ImageComponent('Image', 'https://picsum.photos/800/500'));
+    this.page.addChild(new VideoComponent('Video Title', 'https://www.youtube.com/embed/5dppORtI6RA'));
+    this.page.addChild(new NoteComponent('Note', 'say hello~'));
+    this.page.addChild(new TodoComponent('Todo', 'study'));
+    this.page.addChild(new ImageComponent('Image', 'https://picsum.photos/800/500'));
+    this.page.addChild(new VideoComponent('Video Title', 'https://www.youtube.com/embed/5dppORtI6RA'));
+    this.page.addChild(new NoteComponent('Note', 'say hello~'));
+    this.page.addChild(new TodoComponent('Todo', 'study'));
 
     this.bindElementTodialog('.new-image', MediaSectionInput, (input: MediaSectionInput) => new ImageComponent(input.title, input.url));
     this.bindElementTodialog('.new-video', MediaSectionInput, (input: MediaSectionInput) => new VideoComponent(input.title, input.url));
