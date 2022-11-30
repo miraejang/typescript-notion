@@ -63,7 +63,7 @@ body {
   display: flex;
   justify-content: center;
   height: 100vh;
-  background: url('../assets/background.png') no-repeat center/cover;
+  background: url('./assets/background.png') no-repeat center/cover;
   font-family: Roboto, Oxygen, sans-serif;
   font-size: 1.25rem;
 }
