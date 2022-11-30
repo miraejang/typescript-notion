@@ -1,11 +1,11 @@
-import { MediaSectionInput } from './components/page/dialog/input/media-input.js';
-import { PageComponent, PageItemComponent } from './components/page.js';
-import { InputDialog } from './components/page/dialog/dialog.js';
-import { ImageComponent } from './items/image.js';
-import { NoteComponent } from './items/note.js';
-import { TodoComponent } from './items/todo.js';
-import { VideoComponent } from './items/video.js';
-import { TextSectionInput } from './components/page/dialog/input/text-input.js';
+import { MediaSectionInput } from './src/components/page/dialog/input/media-input.js';
+import { PageComponent, PageItemComponent } from './src/components/page.js';
+import { InputDialog } from './src/components/page/dialog/dialog.js';
+import { ImageComponent } from './src/items/image.js';
+import { NoteComponent } from './src/items/note.js';
+import { TodoComponent } from './src/items/todo.js';
+import { VideoComponent } from './src/items/video.js';
+import { TextSectionInput } from './src/components/page/dialog/input/text-input.js';
 class App {
     constructor(appRoot, dialogRoot) {
         this.dialogRoot = dialogRoot;
