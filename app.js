@@ -13,14 +13,10 @@ class App {
         this.page = new PageComponent(PageItemComponent);
         this.page.attachTo(appRoot);
         // For demo :)
-        this.page.addChild(new ImageComponent('Image', 'https://picsum.photos/800/500'));
-        this.page.addChild(new VideoComponent('Video Title', 'https://www.youtube.com/embed/5dppORtI6RA'));
-        this.page.addChild(new NoteComponent('Note', 'say hello~'));
-        this.page.addChild(new TodoComponent('Todo', 'study'));
-        this.page.addChild(new ImageComponent('Image', 'https://picsum.photos/800/500'));
-        this.page.addChild(new VideoComponent('Video Title', 'https://www.youtube.com/embed/5dppORtI6RA'));
-        this.page.addChild(new NoteComponent('Note', 'say hello~'));
-        this.page.addChild(new TodoComponent('Todo', 'study'));
+        this.page.addChild(new ImageComponent('Image Sample', 'https://picsum.photos/800/500'));
+        this.page.addChild(new VideoComponent('Video Sample', 'https://www.youtube.com/embed/5dppORtI6RA'));
+        this.page.addChild(new NoteComponent('Note Sample', 'Hello~'));
+        this.page.addChild(new TodoComponent('Todo Sample', 'Study'));
         this.bindElementTodialog('.new-image', MediaSectionInput, (input) => new ImageComponent(input.title, input.url));
         this.bindElementTodialog('.new-video', MediaSectionInput, (input) => new VideoComponent(input.title, input.url));
         this.bindElementTodialog('.new-note', TextSectionInput, (input) => new NoteComponent(input.title, input.content));
