@@ -1,5 +1,5 @@
 ﻿# Notion
-TypeScript를 사용한 메모를하고 정리할 수 있는 어플입니다.   
+TypeScript를 사용한 메모를하고 정리할 수 있는 App입니다.   
 
 ![image](https://user-images.githubusercontent.com/45534877/204626410-d6e14dd5-9e7b-4a61-9397-e5ab6c240c38.png)   
 　　　   
