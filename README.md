@@ -5,10 +5,10 @@ TypeScript를 사용한 메모를하고 정리할 수 있는 어플입니다.
 　　　   
 　　　   
 ## 사용한 기술　　　   
-<img src="https://img.shields.io/badge/TypeScript-darkblue?style=for-the-badge" />
-
-## 기능
-
+<img src="https://img.shields.io/badge/TypeScript-darkblue?style=for-the-badge" />　　　   
+　　　   
+　　　   
+## 기능   
 ### 메모 추가
 버튼을 클릭하여 메모를 추가할 수 있습니다.   
 
